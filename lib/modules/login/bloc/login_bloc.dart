@@ -29,7 +29,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.saveUserDetails(response.response.user);
           yield LoginSuccess(user: response.response.user);
         } else {
-          yield LoginError(message: response.response.message);
+          yield LoginError(message: "response.response.message");
         }
       } catch (_) {
         print("exception $_");

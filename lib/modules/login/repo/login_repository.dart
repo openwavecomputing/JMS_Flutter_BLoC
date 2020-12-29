@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:jms_flutter_bloc/network/web_services.dart';
 import 'package:jms_flutter_bloc/storage/sharedprefs/shared_prefs.dart';
 import 'login_response.dart';
+import 'login_response.dart';
 
 class LoginRepository {
   final Webservices jmsApiClient;
@@ -14,7 +15,9 @@ class LoginRepository {
   Future<LoginResponse> submitLogin(
       Map<String, String> loginMappedValues) async {
     print("Call flow LoginRepository");
-    return await jmsApiClient.post(loginMappedValues);
+    final response = await jmsApiClient.post(loginMappedValues);
+
+    return LoginResponse.fromJson(response);
   }
 
   Future<void> saveUserDetails(User user) async {
