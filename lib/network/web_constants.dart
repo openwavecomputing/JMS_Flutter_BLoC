@@ -13,7 +13,7 @@ class WebConstants {
   static const String PASSCODE = "Sk1TU2VjcmV0S2V5OTg1Mg==";
 
   // Login
-  static const String LOGIN_ACTION = "MasterUsersMobile.svc/GetMasterUsersCommonMobile";
+  static const String LOGIN_ACTION = BASE_URL_COMMON + "MasterUsersMobile.svc/GetMasterUsersCommonMobile";
   static const String LOGIN_1_USERNAME = "username";
   static const String LOGIN_2_PASSWORD = "password";
   static const String LOGIN_3_PASSCODE = "PassCode";

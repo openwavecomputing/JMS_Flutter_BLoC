@@ -62,7 +62,7 @@ class _LoginState extends State<LoginScreen> {
         WebConstants.LOGIN_2_PASSWORD: _passwordController.text.toString(),
         WebConstants.LOGIN_3_PASSCODE: WebConstants.PASSCODE,
         WebConstants.LOGIN_4_DEVICE_ID: await DeviceUtils.getDeviceDetails(),
-        WebConstants.LOGIN_5_DEVICE_TOKEN: "1234123412341234",
+        WebConstants.LOGIN_5_DEVICE_TOKEN: "ios1234",
         WebConstants.LOGIN_6_DEVICE_PLATFORM: DeviceUtils.getPlatform(),
         WebConstants.LOGIN_7_APP_VERSION: await AppUtils.getAppVersionNumber(),
         WebConstants.LOGIN_8_PROCEED: "1",

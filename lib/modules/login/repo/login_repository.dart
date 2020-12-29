@@ -14,7 +14,7 @@ class LoginRepository {
   Future<LoginResponse> submitLogin(
       Map<String, String> loginMappedValues) async {
     print("Call flow LoginRepository");
-    return await jmsApiClient.submitLogin(loginMappedValues);
+    return await jmsApiClient.post(loginMappedValues);
   }
 
   Future<void> saveUserDetails(User user) async {

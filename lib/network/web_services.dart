@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
 import 'package:jms_flutter_bloc/modules/login/repo/login_response.dart';
 import 'package:jms_flutter_bloc/network/web_constants.dart';
 import 'package:http/http.dart' as http;
+
+import 'api_exceptions.dart';
 class Webservices {
 
   // Singleton approach
@@ -30,6 +33,45 @@ class Webservices {
       headers: _headers,
       body: jsonEncode(<String, String>{'JsonData': encodeData}),
     );
+  }
+
+  Future<dynamic> post(Map<String, String> loginMappedValues) async {
+
+    String json = jsonEncode(loginMappedValues);
+
+    print(json);
+    Codec<String, String> stringToBase64 = utf8.fuse(base64);
+    String encoded = stringToBase64.encode(json);
+    String decoded = stringToBase64.decode(encoded);
+    print(encoded);
+    print(decoded);
+
+
+    Map<String, String> requestData = {
+      'JsonData': encoded
+    };
+
+
+    String reqUrl =  WebConstants.LOGIN_ACTION;
+
+    print(reqUrl);
+    print(requestData);
+
+    print(jsonEncode(requestData));
+    var responseJson;
+    try {
+      final response = await http.post(reqUrl,headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      }, body: jsonEncode(<String, String>{
+        'JsonData': encoded
+      }));
+      responseJson = _returnResponse(response);
+    } on SocketException {
+      print('No network connection');
+      throw FetchDataException('No Internet connection');
+    }
+    print('api post.');
+    return responseJson;
   }
 
   // Login Webservice
@@ -71,4 +113,23 @@ class Webservices {
     return jobListResponse;
   }
 
+}
+
+
+dynamic _returnResponse(http.Response response) {
+  switch (response.statusCode) {
+    case 200:
+      var responseJson = json.decode(response.body.toString());
+      print(responseJson);
+      return responseJson;
+    case 400:
+      throw BadRequestException(response.body.toString());
+    case 401:
+    case 403:
+      throw UnauthorisedException(response.body.toString());
+    case 500:
+    default:
+      throw FetchDataException(
+          'Error occured while Communication with Server with StatusCode : ${response.statusCode}');
+  }
 }
