@@ -1,0 +1,57 @@
+name: jms_flutter_bloc
+description: JMS application implemented with Bloc architecture.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # APP
+  # App version number
+  package_info: ^0.4.3+2
+
+  # ARCHITECTURE
+  #Bloc oriented files
+  flutter_bloc: ^6.1.1
+  meta: ^1.1.6
+  equatable: ^1.2.5
+
+  # UTILS
+  # Date Format
+  intl: ^0.16.1
+  # MD5 - Encryption and Decryption
+  crypto: ^2.1.5
+  # Login - Device information(Id) on both android and ios
+  device_info: ^0.4.2+8
+
+  # VIEWS
+  # Progress bar
+  progress_dialog: ^1.2.4
+  cupertino_icons: ^0.1.3
+
+  # STORAGE
+  # Shared Preference for Key Value pair data storage
+  shared_preferences: ^0.5.12+4
+
+  # REMOTE
+  # Network operations
+  http: ^0.12.2
+  # Internet check
+  connectivity: ^2.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/mni_logo_main.jpg
