@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jms_flutter_bloc/config/constants/color_constants.dart';
+import 'package:jms_flutter_bloc/config/constants/size_constants.dart';
 
 class JobClosedByTenant extends StatefulWidget {
   @override
@@ -15,7 +17,7 @@ class _JobClosedByTenantState extends State<JobClosedByTenant> {
           Container(
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(12.0, 4.0, 12.0, 4.0),
+              padding: const EdgeInsets.fromLTRB(SizeConstants.SIZE_12, SizeConstants.SIZE_4, SizeConstants.SIZE_12, SizeConstants.SIZE_4),
               child: TextField(
                 keyboardType: TextInputType.multiline,
                 minLines: 5,
@@ -29,15 +31,18 @@ class _JobClosedByTenantState extends State<JobClosedByTenant> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(SizeConstants.SIZE_8),
             child: RaisedButton(
-              color: Colors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              padding: EdgeInsets.all(SizeConstants.SIZE_16),color:ColorConstants.primaryDarkColor,
               onPressed: () {},
               child: Text(
                 "Submit",
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 16.0,
+                    fontSize: SizeConstants.SIZE_18,
                     color: Colors.white,
                 ),
               ),

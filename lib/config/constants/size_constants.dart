@@ -3,8 +3,13 @@ class SizeConstants {
   static const double DIVIDER_1 = 1.0;
   static const double DIVIDER_2 = 2.0;
 
+  static const double SIZE_4 = 4.0;
+  static const double SIZE_8 = 8.0;
+  static const double SIZE_10 = 10.0;
   static const double SIZE_12 = 12.0;
+  static const double SIZE_15 = 15.0;
   static const double SIZE_16 = 16.0;
+  static const double SIZE_18 = 18.0;
   static const double SIZE_20 = 20.0;
   static const double SIZE_26 = 26.0;
   static const double SIZE_32 = 32.0;
@@ -30,4 +35,12 @@ class SizeConstants {
   static const int FLEX_7 = 7;
   static const int FLEX_8 = 8;
   static const int FLEX_9 = 9;
+
+  static const double ELEVATION_1 = 1.0;
+  static const double ELEVATION_2 = 2.0;
+  static const double ELEVATION_3 = 3.0;
+  static const double ELEVATION_4 = 4.0;
+  static const double ELEVATION_5 = 5.0;
+
+
 }

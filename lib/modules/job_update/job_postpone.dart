@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jms_flutter_bloc/config/constants/color_constants.dart';
+import 'package:jms_flutter_bloc/config/constants/size_constants.dart';
 import 'package:jms_flutter_bloc/utils/date_utils.dart';
 
 class JobPostPone extends StatefulWidget {
@@ -63,13 +64,16 @@ class _JobPostPoneState extends State<JobPostPone> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: RaisedButton(
-            color: Colors.blue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.all(SizeConstants.SIZE_16),color:ColorConstants.primaryDarkColor,
             onPressed: () {},
             child: Text(
               "Submit",
               style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 16.0,
+                fontSize: SizeConstants.SIZE_18,
                 color: Colors.white,
               ),
             ),

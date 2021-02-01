@@ -43,7 +43,7 @@ class _TenantStatusState extends State<TenantStatus> {
           children: [
             RaisedButton(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(SizeConstants.SIZE_10),
               ),
               padding: EdgeInsets.all(SizeConstants.SIZE_16),
               child: Text("Tenant Available",
@@ -56,7 +56,7 @@ class _TenantStatusState extends State<TenantStatus> {
             ),SizedBox(height: SizeConstants.SIZE_32),
             RaisedButton(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(SizeConstants.SIZE_10),
               ),
               padding: EdgeInsets.all(SizeConstants.SIZE_16),
               child: Text("Tenant Unavailable",
@@ -69,7 +69,7 @@ class _TenantStatusState extends State<TenantStatus> {
             ),SizedBox(height: SizeConstants.SIZE_32),
             RaisedButton(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(SizeConstants.SIZE_10),
               ),
               padding: EdgeInsets.all(SizeConstants.SIZE_16),
               child: Text("Tenant Refused",
@@ -82,7 +82,7 @@ class _TenantStatusState extends State<TenantStatus> {
             ),SizedBox(height: SizeConstants.SIZE_32),
             RaisedButton(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(SizeConstants.SIZE_10),
               ),
               padding: EdgeInsets.all(SizeConstants.SIZE_16),
               child: Text("Others",

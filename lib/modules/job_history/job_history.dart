@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jms_flutter_bloc/config/constants/size_constants.dart';
 import 'package:jms_flutter_bloc/modules/job_list/bloc/job_list_bloc.dart';
 import 'package:jms_flutter_bloc/modules/job_list/bloc/job_list_event.dart';
 import 'package:jms_flutter_bloc/modules/job_list/bloc/job_list_state.dart';
@@ -22,11 +23,21 @@ class _JobHistoryState extends State<JobHistory> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return _buildJobHistory();
-      },
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("Job History",
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: SizeConstants.SIZE_20,
+                color: Colors.white)),
+        backgroundColor: Colors.blue,
+      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return _buildJobHistory();
+        },
+      ),
     );
   }
 
@@ -34,7 +45,7 @@ class _JobHistoryState extends State<JobHistory> {
     return Card(
       elevation: 4,
       child: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(SizeConstants.SIZE_8),
         child: Column(
           children: [
             Row(
@@ -59,13 +70,13 @@ class _JobHistoryState extends State<JobHistory> {
               height: 12.0,
             ),
             Padding(
-              padding: const EdgeInsets.only(left:8.0,right: 8.0,bottom: 8.0),
+              padding: const EdgeInsets.only(left:SizeConstants.SIZE_8,right: SizeConstants.SIZE_8,bottom: SizeConstants.SIZE_8),
               child: Text(
                   "This job was taken but due to the reason and reason we cannot continue the same for several hours, so the next person who is up to take this job kindly carry respective tools along with you",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black87,
-                      fontSize: 15.0)),
+                      fontSize: SizeConstants.SIZE_15)),
             ),
           ],
         ),

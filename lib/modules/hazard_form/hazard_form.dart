@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jms_flutter_bloc/config/constants/size_constants.dart';
 
 class HazardForm extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _HazardFormState extends State<HazardForm> {
         title: Text("Hazard Form",
             style: TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: 20.0,
+                fontSize: SizeConstants.SIZE_20,
                 color: Colors.white)),
         backgroundColor: Colors.blue,
       ),
@@ -31,9 +32,9 @@ class _HazardFormState extends State<HazardForm> {
 
   Widget _buildHazardFormItem() {
     return Card(
-      elevation: 3,
+      elevation: SizeConstants.ELEVATION_3,
       child: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(SizeConstants.SIZE_8),
         child: Column(
           children: [
             Text(
@@ -41,10 +42,10 @@ class _HazardFormState extends State<HazardForm> {
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: Colors.black87,
-                    fontSize: 18.0),
+                    fontSize: SizeConstants.SIZE_18),
                 textAlign: TextAlign.start),
             SizedBox(
-              height: 8.0,
+              height: SizeConstants.SIZE_8,
             ),
             Row(
               children: [
@@ -55,7 +56,7 @@ class _HazardFormState extends State<HazardForm> {
                     onChanged: _processRadioChanged),
                 Text(
                   "Yes",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20.0),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: SizeConstants.SIZE_20),
                 ),
                 Radio<int>(
                     value: 1,
@@ -64,7 +65,7 @@ class _HazardFormState extends State<HazardForm> {
                     onChanged: _processRadioChanged),
                 Text(
                   "No",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20.0),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: SizeConstants.SIZE_20),
                 ),
               ],
             ),
