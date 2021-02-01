@@ -46,6 +46,11 @@ dependencies:
   # Internet check
   connectivity: ^2.0.2
 
+  # Star rating in feedback screen
+  flutter_rating_bar: ^3.2.0+1
+
+  # Feedback Signature pad
+  flutter_signature_pad: ^2.0.3
 
 dev_dependencies:
   flutter_test:
