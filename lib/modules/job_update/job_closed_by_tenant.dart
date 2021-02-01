@@ -12,12 +12,6 @@ class _JobClosedByTenantState extends State<JobClosedByTenant> {
   Widget build(BuildContext context) {
     return ListView(
         children: [
-          Row(
-            children: [
-              Text("Select Date",style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.bold, color: Colors.black54)),
-              Icon(Icons.calendar_today)
-            ],
-          ),
           Container(
             color: Colors.white,
             child: Padding(

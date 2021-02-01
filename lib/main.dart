@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:jms_flutter_bloc/modules/feedback/feedback.dart';
+import 'package:jms_flutter_bloc/modules/tenant_status/tenant_others/tenant_others.dart';
+import 'package:jms_flutter_bloc/modules/to_be_continue/to_be_continue.dart';
 import 'config/routes/route_generator.dart';
+import 'modules/hazard_form/hazard_form.dart';
 import 'modules/login/bloc/login_bloc.dart';
-import 'modules/splash/splash_screen.dart';
 
 void main() {
   // BlocSupervisor.delegate = SimpleBlocDelegate();
@@ -19,12 +21,12 @@ class MyApp extends StatelessWidget {
       title: 'JMS',
       onGenerateRoute: RouteGenerator.generateRoute,
       home: Scaffold(
-        body: SplashScreen(),
+        body: FeedbackScreen(),
       ),
     );
   }
 
-  void getValue(Object object){
+  void getValue(Object object) {
     object.toString();
   }
 }

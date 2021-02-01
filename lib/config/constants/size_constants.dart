@@ -7,7 +7,9 @@ class SizeConstants {
   static const double SIZE_16 = 16.0;
   static const double SIZE_20 = 20.0;
   static const double SIZE_26 = 26.0;
+  static const double SIZE_32 = 32.0;
   static const double SIZE_50 = 50.0;
+  static const double SIZE_64 = 64.0;
 
   static const double SIZE_100 = 100.0;
   static const double SIZE_120 = 120.0;
