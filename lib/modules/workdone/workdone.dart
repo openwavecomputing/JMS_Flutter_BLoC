@@ -7,7 +7,6 @@ class WorkDoneScreen extends StatefulWidget {
 }
 
 class _WorkDoneScreenState extends State<WorkDoneScreen> {
-
   final descriptionController = TextEditingController();
   final locationController = TextEditingController();
   FocusNode descriptionFocusNode;
@@ -31,15 +30,21 @@ class _WorkDoneScreenState extends State<WorkDoneScreen> {
                   color: Colors.white)),
           backgroundColor: Colors.blue,
         ),
-        body: ListView(
+        body: Column(
           children: [
-            Container(
-                padding: EdgeInsets.all(16.0),
-                color: Colors.black26,
-                child: Text(
-                  "Work Order : 123372345",
-                  style: TextStyle(fontSize: 18.0, color: Colors.black),
-                )),
+            Expanded(
+              child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    width: 500,
+                    padding: EdgeInsets.all(16.0),
+                    color: Colors.black26,
+                    child: Text(
+                      "Work Order : 123372345",
+                      style: TextStyle(fontSize: 18.0, color: Colors.black),
+                    ),
+                  )),
+            ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
@@ -75,7 +80,26 @@ class _WorkDoneScreenState extends State<WorkDoneScreen> {
                       fontSize: 16.0,
                       color: Colors.black)),
             ),
-            Padding(
+            const Spacer(),
+            Expanded(
+              child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    width: 300,
+                    child: MaterialButton(
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(8.0),
+                        ),
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        child: Text("Submit"),
+                        //    style: TextStyle(fontSize: 14)
+                        onPressed: () {
+                          setState(() {});
+                        }),
+                  )),
+            ),
+            /*Padding(
               padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 175),
               child: MaterialButton(
                   shape: new RoundedRectangleBorder(
@@ -88,7 +112,7 @@ class _WorkDoneScreenState extends State<WorkDoneScreen> {
                   onPressed: () {
                     setState(() {});
                   }),
-            )
+            )*/
           ],
         ));
   }

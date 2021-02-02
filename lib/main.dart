@@ -7,6 +7,7 @@ import 'package:jms_flutter_bloc/modules/job_update/job_update.dart';
 import 'package:jms_flutter_bloc/modules/splash/splash_screen.dart';
 import 'package:jms_flutter_bloc/modules/tenant_status/tenant_others/tenant_others.dart';
 import 'package:jms_flutter_bloc/modules/to_be_continue/to_be_continue.dart';
+import 'package:jms_flutter_bloc/modules/work_in_progress/workinprogress.dart';
 import 'package:jms_flutter_bloc/modules/workdone/workdone.dart';
 import 'config/routes/route_generator.dart';
 import 'modules/hazard_form/hazard_form.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: RouteGenerator.generateRoute,
       home: SafeArea(
         child: Scaffold(
-          body: JobUpdate(),
+          body: WorkInProgressScreen(),
         ),
       ),
     );

@@ -50,7 +50,8 @@ dependencies:
   # Internet check
   connectivity: ^2.0.2
 
-
+  # image picker
+  image_picker: ^0.6.6+5
 
 dev_dependencies:
   flutter_test:
