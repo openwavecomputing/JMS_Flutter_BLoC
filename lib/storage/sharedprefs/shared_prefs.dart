@@ -42,6 +42,11 @@ class SharedPrefs {
   Future<String> getUserId() async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
+    print("PREF_USER_MASTER_ID ${sharedPreferences.getString(PrefConstants.PREF_USER_MASTER_ID)}");
+    print("PREF_USER_ID ${sharedPreferences.getString(PrefConstants.PREF_USER_ID)}");
+    print("PREF_USER_DEVICE_ID ${sharedPreferences.getString(PrefConstants.PREF_USER_DEVICE_ID)}");
+    print("PREF_USER_DEVICE_PLATFORM ${sharedPreferences.getString(PrefConstants.PREF_USER_DEVICE_PLATFORM)}");
+    print("PREF_USER_NAME ${sharedPreferences.getString(PrefConstants.PREF_USER_NAME)}");
     return sharedPreferences.getString(PrefConstants.PREF_USER_MASTER_ID) ?? "";
   }
 

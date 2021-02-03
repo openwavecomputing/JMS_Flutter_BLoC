@@ -1,5 +1,6 @@
 
 import 'package:flutter/widgets.dart';
+import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
 import 'package:jms_flutter_bloc/network/web_services.dart';
 import 'package:jms_flutter_bloc/storage/sharedprefs/shared_prefs.dart';
 import 'job_list_response.dart';

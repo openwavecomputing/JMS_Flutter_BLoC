@@ -1,3 +1,5 @@
+/// response : {"success":"True","tbc_version":"9","job_list":[{"job_id":40012,"work_order_no":"115031201","trade":"ELECTRICAL","priority":"BESGRP","due_date":"05-10-2019","status":"Assigned","job_desc":"Defect # 56355 It appears that all lighting on ground south garbage area not working - To dark for photo - requires further investigation - (Hourly Rate: Investigate and asses defect)\r\n\r\nFurther quote will be provided as soon as defect has been assessed i","tenant_alert":0,"PushNotificationStatus":"0","job_history_list":[{"name":"logesh2 ","description":"Weather","status":"Weather","date_time":"24-12-2020 17:45 To 24-12-2020 18:01","details":"ubub","audio_url_file":"","time_sheet_id":44893,"url":"http://113.193.25.21:817/JobAttachmentPartial/LoadJobImageHistory?History=3Hi0syb4G8i3bsddSXw9oTja1jszVgLpdqi+0ucZ2eCzu6Rvxn7ZRZMXmnCou/268B372gwTLdjqIEllkUG2TYhVFanXlgkr/d8IhZiQZHpilZTDBwBO9nuIzeU9OIXJ"}],"tenant_name":"Grant Wenban","tenant_phone":"","tenant_address":"UNIT 101-815, 55 WALKER ST REDFERN  NSW 2016 AU","postal_code":"2016"}]}
+
 class JobListResponse {
   Response _response;
 
@@ -22,20 +24,23 @@ class JobListResponse {
 
 }
 
+/// success : "True"
+/// tbc_version : "9"
+/// job_list : [{"job_id":40012,"work_order_no":"115031201","trade":"ELECTRICAL","priority":"BESGRP","due_date":"05-10-2019","status":"Assigned","job_desc":"Defect # 56355 It appears that all lighting on ground south garbage area not working - To dark for photo - requires further investigation - (Hourly Rate: Investigate and asses defect)\r\n\r\nFurther quote will be provided as soon as defect has been assessed i","tenant_alert":0,"PushNotificationStatus":"0","job_history_list":[{"name":"logesh2 ","description":"Weather","status":"Weather","date_time":"24-12-2020 17:45 To 24-12-2020 18:01","details":"ubub","audio_url_file":"","time_sheet_id":44893,"url":"http://113.193.25.21:817/JobAttachmentPartial/LoadJobImageHistory?History=3Hi0syb4G8i3bsddSXw9oTja1jszVgLpdqi+0ucZ2eCzu6Rvxn7ZRZMXmnCou/268B372gwTLdjqIEllkUG2TYhVFanXlgkr/d8IhZiQZHpilZTDBwBO9nuIzeU9OIXJ"}],"tenant_name":"Grant Wenban","tenant_phone":"","tenant_address":"UNIT 101-815, 55 WALKER ST REDFERN  NSW 2016 AU","postal_code":"2016"}]
 
 class Response {
   String _success;
   String _tbcVersion;
-  List<Job_list> _jobList;
+  List<JobItem> _jobList;
 
   String get success => _success;
   String get tbcVersion => _tbcVersion;
-  List<Job_list> get jobList => _jobList;
+  List<JobItem> get jobList => _jobList;
 
   Response({
       String success, 
       String tbcVersion, 
-      List<Job_list> jobList}){
+      List<JobItem> jobList}){
     _success = success;
     _tbcVersion = tbcVersion;
     _jobList = jobList;
@@ -47,7 +52,7 @@ class Response {
     if (json["job_list"] != null) {
       _jobList = [];
       json["job_list"].forEach((v) {
-        _jobList.add(Job_list.fromJson(v));
+        _jobList.add(JobItem.fromJson(v));
       });
     }
   }
@@ -64,8 +69,22 @@ class Response {
 
 }
 
+/// job_id : 40012
+/// work_order_no : "115031201"
+/// trade : "ELECTRICAL"
+/// priority : "BESGRP"
+/// due_date : "05-10-2019"
+/// status : "Assigned"
+/// job_desc : "Defect # 56355 It appears that all lighting on ground south garbage area not working - To dark for photo - requires further investigation - (Hourly Rate: Investigate and asses defect)\r\n\r\nFurther quote will be provided as soon as defect has been assessed i"
+/// tenant_alert : 0
+/// PushNotificationStatus : "0"
+/// job_history_list : [{"name":"logesh2 ","description":"Weather","status":"Weather","date_time":"24-12-2020 17:45 To 24-12-2020 18:01","details":"ubub","audio_url_file":"","time_sheet_id":44893,"url":"http://113.193.25.21:817/JobAttachmentPartial/LoadJobImageHistory?History=3Hi0syb4G8i3bsddSXw9oTja1jszVgLpdqi+0ucZ2eCzu6Rvxn7ZRZMXmnCou/268B372gwTLdjqIEllkUG2TYhVFanXlgkr/d8IhZiQZHpilZTDBwBO9nuIzeU9OIXJ"}]
+/// tenant_name : "Grant Wenban"
+/// tenant_phone : ""
+/// tenant_address : "UNIT 101-815, 55 WALKER ST REDFERN  NSW 2016 AU"
+/// postal_code : "2016"
 
-class Job_list {
+class JobItem {
   int _jobId;
   String _workOrderNo;
   String _trade;
@@ -75,7 +94,7 @@ class Job_list {
   String _jobDesc;
   int _tenantAlert;
   String _pushNotificationStatus;
-  List<dynamic> _jobHistoryList;
+  List<JobHistoryObject> _jobHistoryList;
   String _tenantName;
   String _tenantPhone;
   String _tenantAddress;
@@ -90,13 +109,13 @@ class Job_list {
   String get jobDesc => _jobDesc;
   int get tenantAlert => _tenantAlert;
   String get pushNotificationStatus => _pushNotificationStatus;
-  List<dynamic> get jobHistoryList => _jobHistoryList;
+  List<JobHistoryObject> get jobHistoryList => _jobHistoryList;
   String get tenantName => _tenantName;
   String get tenantPhone => _tenantPhone;
   String get tenantAddress => _tenantAddress;
   String get postalCode => _postalCode;
 
-  Job_list({
+  JobItem({
       int jobId, 
       String workOrderNo, 
       String trade, 
@@ -106,7 +125,7 @@ class Job_list {
       String jobDesc, 
       int tenantAlert, 
       String pushNotificationStatus, 
-      List<dynamic> jobHistoryList, 
+      List<JobHistoryObject> jobHistoryList,
       String tenantName, 
       String tenantPhone, 
       String tenantAddress, 
@@ -127,7 +146,7 @@ class Job_list {
     _postalCode = postalCode;
 }
 
-  Job_list.fromJson(dynamic json) {
+  JobItem.fromJson(dynamic json) {
     _jobId = json["job_id"];
     _workOrderNo = json["work_order_no"];
     _trade = json["trade"];
@@ -139,9 +158,9 @@ class Job_list {
     _pushNotificationStatus = json["PushNotificationStatus"];
     if (json["job_history_list"] != null) {
       _jobHistoryList = [];
-      // json["job_history_list"].forEach((v) {
-      //   _jobHistoryList.add(dynamic.fromJson(v));
-      // });
+      json["job_history_list"].forEach((v) {
+        _jobHistoryList.add(JobHistoryObject.fromJson(v));
+      });
     }
     _tenantName = json["tenant_name"];
     _tenantPhone = json["tenant_phone"];
@@ -167,6 +186,79 @@ class Job_list {
     map["tenant_phone"] = _tenantPhone;
     map["tenant_address"] = _tenantAddress;
     map["postal_code"] = _postalCode;
+    return map;
+  }
+
+}
+
+/// name : "logesh2 "
+/// description : "Weather"
+/// status : "Weather"
+/// date_time : "24-12-2020 17:45 To 24-12-2020 18:01"
+/// details : "ubub"
+/// audio_url_file : ""
+/// time_sheet_id : 44893
+/// url : "http://113.193.25.21:817/JobAttachmentPartial/LoadJobImageHistory?History=3Hi0syb4G8i3bsddSXw9oTja1jszVgLpdqi+0ucZ2eCzu6Rvxn7ZRZMXmnCou/268B372gwTLdjqIEllkUG2TYhVFanXlgkr/d8IhZiQZHpilZTDBwBO9nuIzeU9OIXJ"
+
+class JobHistoryObject {
+  String _name;
+  String _description;
+  String _status;
+  String _dateTime;
+  String _details;
+  String _audioUrlFile;
+  int _timeSheetId;
+  String _url;
+
+  String get name => _name;
+  String get description => _description;
+  String get status => _status;
+  String get dateTime => _dateTime;
+  String get details => _details;
+  String get audioUrlFile => _audioUrlFile;
+  int get timeSheetId => _timeSheetId;
+  String get url => _url;
+
+  JobHistoryObject({
+      String name, 
+      String description, 
+      String status, 
+      String dateTime, 
+      String details, 
+      String audioUrlFile, 
+      int timeSheetId, 
+      String url}){
+    _name = name;
+    _description = description;
+    _status = status;
+    _dateTime = dateTime;
+    _details = details;
+    _audioUrlFile = audioUrlFile;
+    _timeSheetId = timeSheetId;
+    _url = url;
+}
+
+  JobHistoryObject.fromJson(dynamic json) {
+    _name = json["name"];
+    _description = json["description"];
+    _status = json["status"];
+    _dateTime = json["date_time"];
+    _details = json["details"];
+    _audioUrlFile = json["audio_url_file"];
+    _timeSheetId = json["time_sheet_id"];
+    _url = json["url"];
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    map["name"] = _name;
+    map["description"] = _description;
+    map["status"] = _status;
+    map["date_time"] = _dateTime;
+    map["details"] = _details;
+    map["audio_url_file"] = _audioUrlFile;
+    map["time_sheet_id"] = _timeSheetId;
+    map["url"] = _url;
     return map;
   }
 

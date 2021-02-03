@@ -39,8 +39,8 @@ class _LoginState extends State<LoginScreen> {
     // _usernameController.text = "MNI149";
     // _passwordController.text = "dhamu1";
 
-    _usernameController.text = "MNI153";
-    _passwordController.text = "log2";
+    _usernameController.text = "MNI126";
+    _passwordController.text = "123456";
 
     final LoginRepository repository = LoginRepository(
         jmsApiClient: Webservices(), sharedPrefs: SharedPrefs());

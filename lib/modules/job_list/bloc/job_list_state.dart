@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
+import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
 
 
 abstract class JobListState extends Equatable {

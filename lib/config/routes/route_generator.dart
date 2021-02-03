@@ -4,7 +4,7 @@ import 'package:jms_flutter_bloc/config/constants/nav_constants.dart';
 import 'package:jms_flutter_bloc/modules/detail/job_detail.dart';
 import 'package:jms_flutter_bloc/modules/feedback/feedback.dart';
 import 'package:jms_flutter_bloc/modules/hazard_form/hazard_form.dart';
-import 'package:jms_flutter_bloc/modules/job_history/job_history.dart';
+import 'file:///D:/Damu/Flutter/FlutterProffesional/JMSFlutterBLoC/lib/modules/job_history/view/job_history.dart';
 import 'package:jms_flutter_bloc/modules/job_list/view/job_list.dart';
 import 'package:jms_flutter_bloc/modules/job_update/job_update.dart';
 import 'package:jms_flutter_bloc/modules/login/view/login_screen.dart';
@@ -23,9 +23,9 @@ class RouteGenerator {
       case NavConstants.ROUTE_JOB_LIST:
         return MaterialPageRoute(builder: (context) => JobListScreen());
       case NavConstants.ROUTE_JOB_DETAIL:
-        return MaterialPageRoute(builder: (context) => JobDetail());
+        return MaterialPageRoute(builder: (context) => JobDetail(jobItem: args));
       case NavConstants.ROUTE_JOB_HISTORY:
-        return MaterialPageRoute(builder: (context) => JobHistory());
+        return MaterialPageRoute(builder: (context) => JobHistory(listJobHistory: args));
       case NavConstants.ROUTE_JOB_UPDATE:
         return MaterialPageRoute(builder: (context) => JobUpdate());
       case NavConstants.ROUTE_TENANT_STATUS:

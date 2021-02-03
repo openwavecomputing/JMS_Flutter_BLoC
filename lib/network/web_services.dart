@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
+import 'package:jms_flutter_bloc/modules/job_list/repo/job_list_response.dart';
 import 'package:jms_flutter_bloc/modules/login/repo/login_response.dart';
 import 'package:jms_flutter_bloc/network/web_constants.dart';
 import 'package:http/http.dart' as http;

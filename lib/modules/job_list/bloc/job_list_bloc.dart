@@ -19,9 +19,12 @@ class JobListBloc extends Bloc<JobListEvent, JobListState> {
   @override
   Stream<JobListState> mapEventToState(JobListEvent event) async* {
     print("Call flow LoginBloc $event");
+    print("Call flow LoginBloc $event");
     if (event is JobListFetchEvent) {
       yield JobListLoading();
       try {
+
+
         Map<String, String> mappedValues = {
           WebConstants.JOB_LIST_1_USER_ID: await repository.sharedPrefs.getUserId(),
           WebConstants.JOB_LIST_2_PASSCODE: WebConstants.PASSCODE
