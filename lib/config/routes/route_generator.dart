@@ -4,7 +4,7 @@ import 'package:jms_flutter_bloc/config/constants/nav_constants.dart';
 import 'package:jms_flutter_bloc/modules/detail/job_detail.dart';
 import 'package:jms_flutter_bloc/modules/feedback/feedback.dart';
 import 'package:jms_flutter_bloc/modules/hazard_form/hazard_form.dart';
-import 'file:///D:/Damu/Flutter/FlutterProffesional/JMSFlutterBLoC/lib/modules/job_history/view/job_history.dart';
+import 'package:jms_flutter_bloc/modules/job_history/view/job_history.dart';
 import 'package:jms_flutter_bloc/modules/job_list/view/job_list.dart';
 import 'package:jms_flutter_bloc/modules/job_update/job_update.dart';
 import 'package:jms_flutter_bloc/modules/login/view/login_screen.dart';
